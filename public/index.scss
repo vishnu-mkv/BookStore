@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+$background: #1c1e1f;
+$primary: #FAFFD8;
+$secondary: #22AAA1;
+$warning: #DD403A;
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $background;
+  color: $primary;
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+  background: $secondary;
+  width: 100vw;
+  height: 4em;
+
+  .wrap {
+    height: 100%;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+
+    h1 {
+      margin: auto 1em;
+      padding: 0;
+    }
+
+    button {
+      margin: auto 1em auto auto;
+      padding: 0.5em 1em;
+      border: none;
+      color: $primary;
+      background: $secondary;
+      font-size: 1em;
+
+      &:hover {
+        background: darken($secondary, 10);
+      }
+    }
+  }
+}
+
+#records {
+  width: 100vw;
+  max-width: 1100px;
+  margin: 2em auto;
+  padding: 1.5em;
+  box-sizing: border-box;
+  background: darken($background, 1);
+}
+
+.content {
+  width: 100%;
+  max-width: 1100px;
+
+  th, .center {
+    text-align: center;
+  }
+
+  th, td {
+    padding: 1em;
+  }
+
+  td {
+    text-align: right;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .options {
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin: auto;
+    padding: 0;
+
+    .icon {
+      padding: 0.25em 0 0 1em;
+    }
+
+    .icon > p {
+      height: 0.2em;
+      width: 0.2em;
+      background: $primary;
+      border-radius: 3px;
+      margin: 0;
+    }
+
+    .icon > p:nth-of-type(2) {
+      margin: 0.2em 0;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      left: -3.2em;
+      background: darken($background, 2);
+      border-radius: 6px;
+      z-index: 2;
+    }
+
+    .dropdown p {
+      text-align: right;
+      cursor: pointer;
+      margin: 0;
+      padding: 0.5em 0.8em 0.5em 1em;
+    }
+
+    &:hover {
+      .dropdown {
+        display: block;
+      }
+    }
+  }
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0;
+
+  h2 {
+    margin: 0;
+  }
+
+  .actions {
+    align-self: center;
+
+    button {
+      padding: 0.5em 1em;
+      background: $secondary;
+      color: $primary;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9em;
+      font-weight: 400;
+      margin-left: 0.5em;
+    }
+  }
+}
+
+#empty {
+  p {
+    text-align: center;
+  }
+}
+
+.form-container {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  .form {
+    width: 80%;
+    max-width: 1000px;
+    background: $background;
+    padding: 1em;
+
+    #form-title {
+      margin: 1em;
+    }
+
+    label, input {
+      display: block;
+      width: 90%;
+      color: $primary;
+      outline: none;
+    }
+
+    input {
+      padding: 0.25em;
+      margin-left: 0.9em;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid $secondary;
+      font-size: 1em;
+      font-weight: 400;
+    }
+
+    input:-moz-submit-invalid, input:invalid {
+      box-shadow: none;
+      border-bottom-color: $warning;
+    }
+
+    label {
+      padding: 1em 1em 0.8em;
+      font-size: 1em;
+    }
+
+    .join {
+      margin-top: 0.5em;
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+
+      .group {
+        display: flex;
+        justify-content: flex-start;
+
+        label {
+          padding: 1em 0;
+        }
+
+        input {
+          padding: 0;
+          margin-right: 1em;
+        }
+      }
+
+      input {
+        margin: 0;
+      }
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: center;
+      padding: 1em;
+      gap: 1em;
+      margin-top: 1em;
+
+      button,
+      button:focus,
+      button:active {
+        background: none;
+        outline: none;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+      }
+
+      button[type=reset] {
+        background: $primary;
+        color: $secondary;
+      }
+
+      button[type=submit] {
+        background: $secondary;
+        color: $primary;
+      }
+    }
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#messages {
+  position: absolute;
+  bottom: 2em;
+  width: 60vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 1em;
+
+  small {
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+    text-align: center;
+    border-radius: 5px;
+    background: lighten($background, 7);
+  }
+}

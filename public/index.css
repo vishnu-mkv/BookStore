@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background: #1c1e1f;
+  color: #FAFFD8;
+  font-family: "Open Sans", sans-serif;
+}
+
+nav {
+  background: #22AAA1;
+  width: 100vw;
+  height: 4em;
+}
+nav .wrap {
+  height: 100%;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+}
+nav .wrap h1 {
+  margin: auto 1em;
+  padding: 0;
+}
+nav .wrap button {
+  margin: auto 1em auto auto;
+  padding: 0.5em 1em;
+  border: none;
+  color: #FAFFD8;
+  background: #22AAA1;
+  font-size: 1em;
+}
+nav .wrap button:hover {
+  background: #1a8079;
+}
+
+#records {
+  width: 100vw;
+  max-width: 1100px;
+  margin: 2em auto;
+  padding: 1.5em;
+  box-sizing: border-box;
+  background: #1a1b1c;
+}
+
+.content {
+  width: 100%;
+  max-width: 1100px;
+}
+.content th, .content .center {
+  text-align: center;
+}
+.content th, .content td {
+  padding: 1em;
+}
+.content td {
+  text-align: right;
+}
+.content .left {
+  text-align: left;
+}
+.content .options {
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  margin: auto;
+  padding: 0;
+}
+.content .options .icon {
+  padding: 0.25em 0 0 1em;
+}
+.content .options .icon > p {
+  height: 0.2em;
+  width: 0.2em;
+  background: #FAFFD8;
+  border-radius: 3px;
+  margin: 0;
+}
+.content .options .icon > p:nth-of-type(2) {
+  margin: 0.2em 0;
+}
+.content .options .dropdown {
+  display: none;
+  position: absolute;
+  left: -3.2em;
+  background: #17191a;
+  border-radius: 6px;
+  z-index: 2;
+}
+.content .options .dropdown p {
+  text-align: right;
+  cursor: pointer;
+  margin: 0;
+  padding: 0.5em 0.8em 0.5em 1em;
+}
+.content .options:hover .dropdown {
+  display: block;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0;
+}
+.legend h2 {
+  margin: 0;
+}
+.legend .actions {
+  align-self: center;
+}
+.legend .actions button {
+  padding: 0.5em 1em;
+  background: #22AAA1;
+  color: #FAFFD8;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-left: 0.5em;
+}
+
+#empty p {
+  text-align: center;
+}
+
+.form-container {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.form-container .form {
+  width: 80%;
+  max-width: 1000px;
+  background: #1c1e1f;
+  padding: 1em;
+}
+.form-container .form #form-title {
+  margin: 1em;
+}
+.form-container .form label, .form-container .form input {
+  display: block;
+  width: 90%;
+  color: #FAFFD8;
+  outline: none;
+}
+.form-container .form input {
+  padding: 0.25em;
+  margin-left: 0.9em;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid #22AAA1;
+  font-size: 1em;
+  font-weight: 400;
+}
+.form-container .form input:-moz-submit-invalid, .form-container .form input:invalid {
+  box-shadow: none;
+  border-bottom-color: #DD403A;
+}
+.form-container .form label {
+  padding: 1em 1em 0.8em;
+  font-size: 1em;
+}
+.form-container .form .join {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+.form-container .form .join .group {
+  display: flex;
+  justify-content: flex-start;
+}
+.form-container .form .join .group label {
+  padding: 1em 0;
+}
+.form-container .form .join .group input {
+  padding: 0;
+  margin-right: 1em;
+}
+.form-container .form .join input {
+  margin: 0;
+}
+.form-container .form .form-buttons {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  gap: 1em;
+  margin-top: 1em;
+}
+.form-container .form .form-buttons button,
+.form-container .form .form-buttons button:focus,
+.form-container .form .form-buttons button:active {
+  background: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+.form-container .form .form-buttons button[type=reset] {
+  background: #FAFFD8;
+  color: #22AAA1;
+}
+.form-container .form .form-buttons button[type=submit] {
+  background: #22AAA1;
+  color: #FAFFD8;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#messages {
+  position: absolute;
+  bottom: 2em;
+  width: 60vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 1em;
+}
+#messages small {
+  font-weight: 600;
+  font-size: 0.9em;
+  padding: 0.5em 1em;
+  text-align: center;
+  border-radius: 5px;
+  background: #2d3032;
+}
+
+/*# sourceMappingURL=index.css.map */

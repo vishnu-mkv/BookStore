@@ -7,7 +7,73 @@
 </head>
 <body>
 
+<nav>
+    <div class="wrap">
+        <h1>BookShop</h1>
+        <button id="full-reset">Reset</button>
+    </div>
+</nav>
 
+<section id="records">
+    <div class="legend">
+        <h2>Books</h2>
+        <div class="actions">
+            <button id="create">Add a Book</button>
+            <button id="refresh">Refresh</button>
+        </div>
+    </div>
+    <table class="content" id="table">
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>AUTHOR</th>
+            <th>ISBN</th>
+            <th>AVAILABILITY</th>
+            <th>PRICE</th>
+            <th></th>
+        </tr>
+    </table>
+    <div id="empty">
+        <p>Nothing here for now...</p>
+    </div>
+</section>
+
+<div class="form-container" id="only-form">
+
+    <div class="form">
+        <h3 id="form-title">Add Book</h3>
+        <form action="" id="actual-form">
+            <label for="name">Name</label>
+            <input id="name" required type="text">
+
+            <label for="author">Author</label>
+            <input id="author" required type="text">
+
+            <label for="isbn">ISBN</label>
+            <input id="isbn" type="text">
+
+            <div class="join">
+
+                <div class="group">
+                    <label for="availability">Availability</label>
+                    <input id="availability" type="number">
+                </div>
+                <div class="group">
+                    <label for="price">Price</label>
+                    <input id="price" step="0.01" type="number">
+                </div>
+            </div>
+
+
+            <div class="form-buttons">
+                <button type="reset">CLEAR</button>
+                <button id="form-save" type="submit">SAVE</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script defer src="index.js"></script>
 </body>
 </html>

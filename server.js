@@ -1,11 +1,15 @@
 const SQL = require('./sql')
 const express = require('express')
+const cors = require('cors')
+const morgan = require('morgan');
 const app = express();
 const port = 3000
 
-app.use(express.json());
-app.use(express.static('public'))
+morgan('dev');
 
+app.use(express.json());
+app.use(express.static('public'));
+app.use(cors());
 SQL.createTable();
 
 app.get('/', (req, res) => {
@@ -49,8 +53,8 @@ app.post('/records/reset/', (req, res) => {
 
 app.post('/records/remove/', (req, res) => {
 
+    console.log(req.body);
     if (req.body['id'] === undefined) {
-        res.status(400);
         res.json({'id': 'This field is required'})
         return;
     }
@@ -58,7 +62,7 @@ app.post('/records/remove/', (req, res) => {
     SQL.removeBook(req.body['id'])
         .then(data => {
             if (data.affectedRows > 0) {
-                res.json({'ok': true, 'status': 'deleted'})
+                res.json({'ok': true, 'status': 'deleted', 'id': req.body['id']})
             } else res.json({'ok': false, 'status': 'not found'})
         })
         .catch(err => {
@@ -128,7 +132,7 @@ app.post('/records/create/', (req, res) => {
         .then(data => {
             SQL.getBook(data.insertId)
                 .then(data => {
-                    res.json(data)
+                    res.json(data);
                 })
                 .catch(err => {
                     res.status(400);
